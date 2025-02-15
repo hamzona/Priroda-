@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E8F5E9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Header Image -->
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/tracking_icon"
+            android:layout_gravity="center"
+            android:contentDescription="Tracking Icon"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Water Usage Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💧 Potrošnja vode"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textViewWaterSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sedmična potrošnja vode: 0,00 l"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/editTextWaterUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Unesite potrošnju vode (L)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/input_rounded_background"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonSaveWaterUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uštedite potrošnju vode"
+            android:background="@drawable/button_rounded_background"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Electricity Usage Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ Potrošnja električne energije"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFA726"
+            android:layout_marginTop="24dp"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/editTextElectricityUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Unesite potrošnju električne energije (kWh)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/input_rounded_background"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonSaveElectricityUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uštedite potrošnju električne energije"
+            android:background="@drawable/button_orange_background"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Fuel Usage Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⛽ Potrošnja goriva"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            android:layout_marginTop="24dp"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/editTextFuelUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="Unesite potrošnju goriva (u litrima)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/input_rounded_background"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonSaveFuelUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spasi potrošnju goriva"
+            android:background="@drawable/button_red_background"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/buttonBackToMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⬅ Povratak na glavnu"
+            android:background="@drawable/button_gray_background"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>

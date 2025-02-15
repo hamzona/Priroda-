@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E8F5E9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Water Saving Tips Section -->
+        <TextView
+            android:id="@+id/textViewWaterTipsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💧 Savjeti za uštedu vode"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            android:src="@drawable/water_saving"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            android:background="#C8E6C9"
+            android:padding="8dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textViewWaterTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Popravite curenje odmah.\n• Koristite kantu umjesto crijeva za pranje automobila.\n• Isključite česmu dok perete zube."
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/textview_rounded_background"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonWaterTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Više savjeta za uštedu vode"
+            android:background="@drawable/button_with_shadow"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Electricity Saving Tips Section -->
+        <TextView
+            android:id="@+id/textViewElectricityTipsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ Savjeti za uštedu električne energije"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#388E3C"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            android:src="@drawable/electricity_saving"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            android:background="#C8E6C9"
+            android:padding="8dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textViewElectricityTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Isključite svjetla kada ih ne koristite.\n• Isključite uređaje koji nisu u upotrebi.\n• Koristite energetski efikasne uređaje."
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/textview_rounded_background"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonElectricityTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Više savjeta za uštedu električne energije"
+            android:background="@drawable/button_with_shadow"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Recycling Tips Section -->
+        <TextView
+            android:id="@+id/textViewRecyclingTipsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♻️ Savjeti za reciklažu"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFA726"
+            android:layout_marginBottom="12dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="140dp"
+            android:src="@drawable/recycling"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            android:background="#FFE0B2"
+            android:padding="8dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textViewRecyclingTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Odvojite materijale za reciklažu (plastika, papir, metal).\n• Izbjegavajte plastiku za jednokratnu upotrebu.\n• Ponovo koristite staklene posude."
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/textview_rounded_background"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/buttonRecyclingTips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Više savjeta za reciklažu"
+            android:background="@drawable/button_with_shadow"
+
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
