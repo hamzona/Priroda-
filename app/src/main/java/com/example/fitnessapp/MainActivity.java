@@ -19,23 +19,19 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Apply edge-to-edge insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Initialize buttons
         Button buttonProfile = findViewById(R.id.buttonProfile);
         Button buttonPlans = findViewById(R.id.buttonPlans);
         Button buttonTracking = findViewById(R.id.buttonTracking);
         Button buttonLogout = findViewById(R.id.buttonLogout);
 
-        // Dohvati proslijeđeno korisničko ime iz LoginActivity
         String loggedInUsername = getIntent().getStringExtra("username");
 
-        // Set click listeners for navigation
         buttonProfile.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             intent.putExtra("username", loggedInUsername);  // Prosljeđivanje korisničkog imena
@@ -45,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         buttonPlans.setOnClickListener(v -> navigateTo(PlansActivity.class));
         buttonTracking.setOnClickListener(v -> navigateTo(TrackingActivity.class));
 
-        // Logout functionality
         buttonLogout.setOnClickListener(v -> {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);

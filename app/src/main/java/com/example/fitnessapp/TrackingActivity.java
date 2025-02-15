@@ -1,5 +1,6 @@
 package com.example.fitnessapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,10 +21,8 @@ public class TrackingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
 
-        // Initialize Database Helper
         databaseHelper = new DatabaseHelper(this);
 
-        // Initialize Views
         textViewWaterSummary = findViewById(R.id.textViewWaterSummary);
         editTextWaterUsage = findViewById(R.id.editTextWaterUsage);
         editTextElectricityUsage = findViewById(R.id.editTextElectricityUsage);
@@ -33,15 +32,12 @@ public class TrackingActivity extends AppCompatActivity {
         Button buttonSaveFuelUsage = findViewById(R.id.buttonSaveFuelUsage);
         Button buttonBackToMain = findViewById(R.id.buttonBackToMain);
 
-        // Load Weekly Summaries
         displayWaterUsageSummary();
 
-        // Save Data Listeners
         buttonSaveWaterUsage.setOnClickListener(v -> saveWaterUsage());
         buttonSaveElectricityUsage.setOnClickListener(v -> saveElectricityUsage());
         buttonSaveFuelUsage.setOnClickListener(v -> saveFuelUsage());
 
-        // Back to Main Page Button
         buttonBackToMain.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -84,6 +80,7 @@ public class TrackingActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private void displayWaterUsageSummary() {
         double weeklyWaterUsage = databaseHelper.getWeeklyWaterUsage();
         textViewWaterSummary.setText(String.format("Weekly Water Usage: %.2f L", weeklyWaterUsage));

@@ -19,7 +19,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Initialize views
         editTextName = findViewById(R.id.editTextName);
         editTextLastName = findViewById(R.id.editTextLastName);
         editTextUsername = findViewById(R.id.editTextUsername);
@@ -28,10 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
 
-        // Local variable for database helper
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
-        // Use lambda for click listener
         buttonRegister.setOnClickListener(v -> registerUser(databaseHelper));
     }
 
@@ -76,12 +72,11 @@ public class RegisterActivity extends AppCompatActivity {
         newUser.setLastName(lastName);
         newUser.setUsername(username);
         newUser.setEmail(email);
-        newUser.setPassword(password); // Replace with hashed password if hashing logic is implemented
+        newUser.setPassword(password);
 
         long result = databaseHelper.addUser(newUser);
         if (result != -1) {
             Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
-            // Redirect to LoginActivity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();

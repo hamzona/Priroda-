@@ -22,19 +22,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize views
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewRegister = findViewById(R.id.textViewRegister);
 
-        // Initialize database helper
         databaseHelper = new DatabaseHelper(this);
 
-        // Set login button click listener
         buttonLogin.setOnClickListener(v -> loginUser());
 
-        // Navigate to RegisterActivity
         textViewRegister.setOnClickListener(v -> {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
@@ -45,27 +41,22 @@ public class LoginActivity extends AppCompatActivity {
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString();
 
-        // Validate inputs
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Molimo unesite i korisničko ime i šifru.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Check credentials in database
         User user = databaseHelper.getUserByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
-            // Login successful
-            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Login uspješan!", Toast.LENGTH_SHORT).show();
 
-            // Pass the username to MainActivity
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("username", username);  // Prosljeđivanje korisničkog imena
+            intent.putExtra("username", username);
             startActivity(intent);
 
             finish();
         } else {
-            // Login failed
-            Toast.makeText(this, "Invalid username or password.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "pogrešno korisničko ime ili šifra.", Toast.LENGTH_SHORT).show();
         }
     }
 }
