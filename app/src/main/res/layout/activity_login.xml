@@ -6,7 +6,6 @@
     android:padding="16dp"
     android:background="#E8F5E9">
 
-    <!-- App Title -->
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         android:textColor="#388E3C"
         android:layout_marginBottom="24dp" />
 
-    <!-- Username Input -->
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
@@ -31,7 +29,6 @@
         android:textColorHint="#81C784"
         android:layout_marginBottom="16dp" />
 
-    <!-- Password Input -->
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
@@ -44,7 +41,6 @@
         android:textColorHint="#81C784"
         android:layout_marginBottom="24dp" />
 
-    <!-- Login Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
@@ -57,7 +53,6 @@
         android:layout_marginBottom="16dp" />
 
 
-    <!-- Register Text -->
     <TextView
         android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"

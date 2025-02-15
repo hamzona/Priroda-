@@ -9,18 +9,15 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // Database Information
     private static final String DATABASE_NAME = "fitnessapp.db";
     private static final int DATABASE_VERSION = 1;
 
-    // Table Names
     public static final String TABLE_USER = "users";
     public static final String TABLE_WATER_USAGE = "water_usage";
     public static final String TABLE_PLASTIC_USAGE = "plastic_usage";
     public static final String TABLE_FUEL_USAGE = "fuel_usage";
     public static final String TABLE_ELECTRICITY_USAGE = "electricity_usage";
 
-    // User Table Columns
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_LAST_NAME = "last_name";
@@ -28,7 +25,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EMAIL = "email";
     public static final String COLUMN_PASSWORD = "password";
 
-    // SQL to Create Tables
     private static final String CREATE_TABLE_USER =
             "CREATE TABLE " + TABLE_USER + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -90,7 +86,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Add water usage
     public long addWaterUsage(double waterUsage) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -99,7 +94,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_WATER_USAGE, null, values);
     }
 
-    // Get weekly water usage
     public double getWeeklyWaterUsage() {
         SQLiteDatabase db = this.getReadableDatabase();
         double weeklyWaterUsage = 0;
@@ -116,7 +110,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return weeklyWaterUsage;
     }
 
-    // Add electricity usage
     public long addElectricityUsage(double electricityUsage) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -125,7 +118,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_ELECTRICITY_USAGE, null, values);
     }
 
-    // Add fuel usage
     public long addFuelUsage(double fuelUsage) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -134,7 +126,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_FUEL_USAGE, null, values);
     }
 
-    // Add plastic usage
     public long addPlasticUsage(int plasticUsage) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -143,7 +134,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_PLASTIC_USAGE, null, values);
     }
 
-    // Add a user to the database
     public long addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -157,7 +147,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    // Retrieve a user by username
     public User getUserByUsername(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, null, COLUMN_USERNAME + "=?",
@@ -181,7 +170,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    // Retrieve a user by email
     public User getUserByEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, null, COLUMN_EMAIL + "=?",

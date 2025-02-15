@@ -8,7 +8,6 @@ public class User {
     private String email;
     private String password;
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

@@ -8,7 +8,6 @@
     android:padding="16dp"
     android:background="#E8F5E9">
 
-    <!-- Profile Button -->
     <Button
         android:id="@+id/buttonProfile"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
         android:textSize="16sp"
         android:padding="14dp" />
 
-    <!-- Plans Button -->
     <Button
         android:id="@+id/buttonPlans"
         android:layout_width="match_parent"
@@ -34,7 +32,6 @@
         android:textSize="16sp"
         android:padding="14dp" />
 
-    <!-- Tracking Button -->
     <Button
         android:id="@+id/buttonTracking"
         android:layout_width="match_parent"
@@ -47,7 +44,6 @@
         android:textSize="16sp"
         android:padding="14dp" />
 
-    <!-- Logout Button -->
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
