@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resource Usage Tracker"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="20dp"/>
+    <TextView
+        android:id="@+id/textViewWaterUsage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Water Usage: 0.0 L"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/buttonBackToMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewElectricityUsage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Electricity Usage: 0.0 kWh"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewWaterUsage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewFuelUsage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fuel Usage: 0.0 L"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewElectricityUsage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonBackToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Main"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+        Button buttonOpenResourceUsage = findViewById(R.id.buttonOpenResourceUsage);
+        buttonOpenResourceUsage.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ResourceUsageActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private void navigateTo(Class<?> targetActivity) {

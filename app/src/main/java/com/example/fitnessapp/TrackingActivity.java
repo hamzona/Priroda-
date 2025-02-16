@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -64,18 +65,23 @@ public class TrackingActivity extends AppCompatActivity {
         if (!input.isEmpty()) {
             try {
                 double usage = Double.parseDouble(input);
+                Log.d("TrackingActivity", "Spremanje unosa za " + type + ": " + usage);
                 long result = saver.save(usage);
 
                 if (result != -1) {
+                    Log.d("TrackingActivity", type + " usage saved successfully.");
                     Toast.makeText(this, type + " usage saved!", Toast.LENGTH_SHORT).show();
                     inputField.setText("");
                 } else {
+                    Log.e("TrackingActivity", "Failed to save " + type + " usage.");
                     Toast.makeText(this, "Failed to save " + type + " usage.", Toast.LENGTH_SHORT).show();
                 }
             } catch (NumberFormatException e) {
+                Log.e("TrackingActivity", "Neispravan unos za " + type + ": " + input);
                 Toast.makeText(this, "Invalid input for " + type + ". Enter a valid number.", Toast.LENGTH_SHORT).show();
             }
         } else {
+            Log.e("TrackingActivity", "Prazan unos za " + type);
             Toast.makeText(this, "Enter " + type + " usage.", Toast.LENGTH_SHORT).show();
         }
     }
